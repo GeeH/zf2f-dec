@@ -17,18 +17,6 @@ class IndexController extends AbstractActionController
 {
     public function indexAction()
     {
-        $adapter = $this->getServiceLocator()->get('db-adapter');
-
-        'factories' => array(
-            'mysql-db-adapter' => function() ...
-            'sqlite-db-adapter' => function() ...
-            'mssql-db-adapter' => function() ...
-        ),
-
-        'alaises' => array(
-            'db-adapter' => 'sqlite-db-adapter',
-        ),
-
         return new ViewModel();
     }
 }

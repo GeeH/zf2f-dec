@@ -56,12 +56,35 @@ class Module
             'aliases' => array(
                 'user-service' => 'Application\Service\UserService',
             ),
+            'services' => array(
+                'categories' => array(
+                    'barter',
+                    'beauty',
+                    'clothing',
+                    'computer',
+                    'entertainment',
+                    'free',
+                    'garden',
+                    'general',
+                    'health',
+                    'household',
+                    'phones',
+                    'property',
+                    'sporting',
+                    'tools',
+                    'transportation',
+                    'wanted',
+                ),
+            ),
 
 
         );
     }
 
-    public function onDispatch(MvcEvent $e)
+    public function onDispatch(MvcEvent $event)
     {
+        $serviceManager = $event->getApplication()->getServiceManager();
+        $categories = $serviceManager->get('categories');
+        var_dump($categories);
     }
 }
