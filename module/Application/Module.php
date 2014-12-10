@@ -49,9 +49,7 @@ class Module
                     $logger = $sm->get('Zend\Log\Logger');
                     return new UserService($logger);
                 },
-                'Zend\Log\Logger' => function (ServiceManager $sm) {
-                    return new Logger();
-                },
+                'Zend\Log\Logger' => 'Application\Factory\LoggerFactory',
             ),
             'invokables' => array(
 
