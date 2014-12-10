@@ -52,8 +52,12 @@ class Module
                 'Zend\Log\Logger' => 'Application\Factory\LoggerFactory',
             ),
             'invokables' => array(
-
             ),
+            'aliases' => array(
+                'user-service' => 'Application\Service\UserService',
+            ),
+
+
         );
     }
 
