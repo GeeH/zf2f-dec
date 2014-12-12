@@ -50,6 +50,10 @@ class Module
                     return new UserService($logger);
                 },
                 'Zend\Log\Logger' => 'Application\Factory\LoggerFactory',
+
+            ),
+            'abstract_factories' => array(
+                'Application\Factory\TableAbstractFactory',
             ),
             'invokables' => array(
             ),
