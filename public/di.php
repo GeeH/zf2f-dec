@@ -43,6 +43,12 @@ $serviceManager->setFactory('user-service', function (ServiceManager $serviceMan
     return new UserService($logger);
 });
 
+$serviceManager->setShared('user-service', false);
+
 // somewhere else with access to servicemanager
 
-var_dump($serviceManager->get('user-service'));
+var_dump($sm1 = $serviceManager->get('user-service'));
+var_dump($sm2 = $serviceManager->get('user-service'));
+var_dump($sm3 = $serviceManager->get('user-service'));
+var_dump($sm4 = $serviceManager->get('user-service'));
+var_dump($sm5 = $serviceManager->get('user-service'));
